@@ -1,0 +1,15 @@
+{% block content %}
+<h1>فرم پرسش و پاسخ</h1>
+<form action="{% url 'my_form_view' %}" method="post">
+    {% csrf_token %}
+    <p>
+        <label for="question_text">متن سوال:</label>
+        <textarea id="question_text" name="question_text"></textarea>
+    </p>
+    <p>
+        <label for="api_response">پاسخ هوش مصنوعی:</label>
+        <textarea id="api_response" name="api_response" disabled>{{ api_response }}</textarea>
+    </p>
+    <input type="submit" value="ارسال">
+</form>
+{% endblock %}
